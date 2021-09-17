@@ -13,6 +13,7 @@ namespace Museum
             int chance =0;
             bool fire= false;
             int roomsVisited = 0;
+            bool room = true;
             while(true)
             {
                 if (fire ==false)
@@ -24,12 +25,15 @@ namespace Museum
                         fire = true;
                     }
                 }
-                if (fire==true && currentRoom != "exit")
+                if (fire==true && currentRoom != "exit" )
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("A fire has started! Navigate to the exit.");
-                        Console.ForegroundColor = ConsoleColor.Grey;
+                        Console.ResetColor();
+                        if (room==true)
+                        {
                         roomsVisited++;
+                        }
                     }
 
                 if (currentRoom == "entrance")
@@ -69,11 +73,13 @@ namespace Museum
                     {
                         Console.WriteLine("Information about salt sculptures.");
                         Console.ReadLine();
+                        room = false;
                     }
                     else if(choice=="7")
                     {
                         Console.WriteLine("Information about cigars");
                         Console.ReadLine();
+                        room = false;
                     }
                 }
                 else if(currentRoom == "exhibitionHall1")
@@ -102,6 +108,7 @@ namespace Museum
                     {
                         Console.WriteLine("Information about Saltwater evaporate.");
                         Console.ReadLine();
+                        room = false;
                     }
                 }
                 else if(currentRoom=="café")
@@ -148,6 +155,7 @@ namespace Museum
                     {
                         Console.WriteLine("Pictures of himalaya");
                         Console.ReadLine();
+                        room = false;
                     }
                 }
                 else if(currentRoom=="wc")
