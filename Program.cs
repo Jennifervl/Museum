@@ -34,6 +34,10 @@ namespace Museum
                         {
                         roomsVisited++;
                         }
+                        else
+                        {
+                            room = true;
+                        }
                     }
 
                 if (currentRoom == "entrance")
