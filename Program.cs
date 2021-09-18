@@ -18,7 +18,6 @@ namespace Museum
             {
                 if (fire ==false)
                 {
-                
                     chance = random.Next(1,11);
                     if (chance == 1)
                     {
